@@ -1,5 +1,35 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
+:root {
+  --style-color: #3171d6;
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.selected {
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.5s;
+}
+.container {
+  display: flex;
+  width: 500px;
+  justify-content: space-between;
+}
+
+.container button:hover {
+  background: #bfbfbf;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -7,16 +37,34 @@
 }
 
 body {
-  background-color: white;
-  color: black;
+  background-color: var(--style-color);
+  color: white;
   font-family: "Roboto", sans-serif;
   display: flex;
   justify-content: center;
 }
 
+span {
+  margin: 0 5px;
+}
+
+button {
+  border-radius: 10rem;
+  background-color: #ffffff; /* Green */
+  border: none;
+  color: var(--style-color);
+  padding: 1rem 2rem;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.25rem;
+}
+
 .board {
-  border: 1rem solid black;
-  background: black;
+  border: 1rem solid white;
+  border-radius: 1rem;
+  background: white;
   width: 500px;
   height: 500px;
   display: grid;
@@ -25,6 +73,76 @@ body {
 }
 
 .squares {
+  background: var(--style-color);
+  border-radius: 0.5rem;
+  color: white;
   border: none;
   font-size: 5rem;
+  cursor: pointer;
+  outline: none;
+}
+
+.fadeSquare {
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.5s;
+}
+
+.result {
+  background-color: var(--style-color);
+  color: white;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  font-size: 1.25rem;
+  justify-content: right;
+  padding-top: 1.5rem;
+}
+
+.history {
+  background-color: var(--style-color);
+  color: white;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  font-size: 1.25rem;
+  justify-content: left;
+  padding-top: 1.5rem;
+}
+
+.title {
+  background-color: var(--style-color);
+  color: white;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  font-size: 3rem;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.flex-item {
+  background: var(--style-color);
+  color: white;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: left;
+}
+
+.flex-item2 {
+  background: var(--style-color);
+  color: white;
+  font-weight: bold;
+  width: 15rem;
+  font-size: 3em;
+  text-align: left;
+  flex-direction: column;
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

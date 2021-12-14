@@ -1,10 +1,11 @@
 import React from "react";
 
-const Square = (/*{ parameters }*/) => {
+const Square = ({ key, value, onClick }) => {
+  let classN = value !== null ? "squares selected" : "squares";
   return (
-    <>
-    // TODO: Create a clickable square that can contain an X or O
-    </>
+    <button className={classN} onClick={onClick}>
+      {value}
+    </button>
   );
 };
 
